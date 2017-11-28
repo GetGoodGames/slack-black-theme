@@ -981,3 +981,18 @@ ts-jumper, ts-jumper.active {
 ts-jumper ts-jumper-container {
   box-shadow: 0 5px 20px rgba(0,0,0,1);
 }
+
+#chat_input_tab_ui {
+  background-color: var(--background) !important;
+  border: 1px solid rgba(255,255,255,.15) !important;
+  color: var(--text) !important;
+}
+
+#chat_input_tab_ui_header {
+  background-color: var(--background-elevated) !important;
+  color: var(--text) !important;
+}
+
+#chat_input_tab_ui_scroller > ul.type_emoji > li.tab_complete_ui_item {
+  color: var(--text) !important;
+}
