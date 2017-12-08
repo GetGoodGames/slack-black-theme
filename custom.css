@@ -428,7 +428,7 @@ code {
 }
 .emoji[title="effect-rubberband"] + .emoji {
   animation: rubberband 1s infinite;
-  animation-fill-mode: fowards;
+  animation-fill-mode: forwards;
 }
 /*.message_content_header_left .message_current_status {
   position: absolute;
