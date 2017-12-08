@@ -427,7 +427,7 @@ code {
   animation-fill-mode: forwards;
 }
 .emoji[title="effect-rubberband"] + .emoji {
-  animation: rubberband infinite;
+  animation: rubberband 1s infinite;
   animation-fill-mode: fowards;
 }
 /*.message_content_header_left .message_current_status {
