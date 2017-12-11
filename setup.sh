@@ -6,7 +6,7 @@ echo "If this script doesn't work, be sure to run it as sudo"
 # append that to /usr/lib/slack/resources/app.asar.unpacked/src/static/index.js
 # echo that it worked
 
-index_path="/usr/lib/slack/resources/app.asar.unpacked/src/static/index.js"
+index_path="/usr/lib/slack/resources/app.asar.unpacked/src/static/ssb-interop.js"
 
 rm $index_path
 touch $index_path

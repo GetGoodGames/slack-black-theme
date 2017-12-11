@@ -1,52 +1,41 @@
-//do not migrate preload script into TypeScript
+/**
+ * The preload script needs to stay in regular ole JavaScript, because it is
+ * the point of entry for electron-compile.
+ */
+
 require('../stat-cache');
-const profiler = require('../utils/profiler');
+
+const { init } = require('electron-compile');
+const { assignIn } = require('lodash');
+const path = require('path');
+
+const { isPrebuilt } = require('../utils/process-helpers');
+const profiler = require('../utils/profiler.js');
 
 if (profiler.shouldProfile()) profiler.startProfiling();
 
-var startup = function() {
-  var url = require('url');
+process.on('uncaughtException', (e) => console.error(e));
 
-  // Skip "?loadSettings=".
-  var fileUri = url.parse(window.location.href);
-
-  var queryParts = fileUri.query.split('&');
-  var loadSettingsStr = null;
-
-  for (var j=0; j < queryParts.length; j++) {
-    if (queryParts[j].match(/loadSettings/)) {
-      loadSettingsStr = queryParts[j].replace("loadSettings=", "");
-      break;
-    }
-  }
-
-  var loadSettings = JSON.parse(decodeURIComponent(loadSettingsStr));
-
-  // Require before the module cache in dev mode
-  window.loadSettings = loadSettings;
-
-  var noCommitVersion = loadSettings.version.split('-')[0];
-  var shouldSuppressErrors = loadSettings.devMode;
-  if (!loadSettings.isSpec) {
-    require('../renderer/bugsnag-setup').setupBugsnag(shouldSuppressErrors, noCommitVersion);
-  }
-
-  if (loadSettings.bootstrapScript) {
-    require(loadSettings.bootstrapScript);
-  }
-};
-
-
-document.addEventListener("DOMContentLoaded", function() { // eslint-disable-line
-  try {
-    startup();
-  } catch (e) {
-    console.log(e.stack);
-
-    if (window.Bugsnag) {
-      window.Bugsnag.notifyException(e, "Renderer crash");
-    }
-
-    throw e;
-  }
+/**
+ * Patch Node.js globals back in, refer to
+ * https://electron.atom.io/docs/api/process/#event-loaded.
+ */
+const processRef = window.process;
+process.once('loaded', () => {
+  window.process = processRef;
 });
+
+/**
+ * loadSettings are just the command-line arguments we're concerned with, in
+ * this case developer vs production mode.
+ */
+const loadSettings = window.loadSettings = assignIn({},
+  require('electron').remote.getGlobal('loadSettings'),
+  { windowType: 'webapp' }
+);
+
+const resourcePath = path.join(__dirname, '..', '..');
+const mainModule = require.resolve('../ssb/main.ts');
+const isDevMode = loadSettings.devMode && isPrebuilt();
+
+init(resourcePath, mainModule, !isDevMode);
