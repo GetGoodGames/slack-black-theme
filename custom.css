@@ -171,10 +171,11 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
   border-radius: 0;
   width: 100%;
   color: var(--badge-text);
+  z-index: 1;
 }
 .p-channel_sidebar__badge,
 .p-channel_sidebar__banner--mentions:not(button) {
-  background: linear-gradient(to right, transparent 25%, var(--badge) 100%) !important;
+  background: linear-gradient(to right, transparent 0%, var(--badge) 75%) !important;
   border: none;
   width: 100px;
   position: absolute;
@@ -417,6 +418,11 @@ code {
 .emoji[title ^="effect"] {
   display: none;
 }
+.emoji[title="effect-triggered"] + .emoji {
+  transform: translate(0,0);
+  animation: triggered .1s infinite;
+  animation-fill-mode: forwards;
+}
 .emoji[title="effect-pulse"] + .emoji {
   transform: scale(1,1);
   animation: pulse 1s infinite;
@@ -426,14 +432,17 @@ code {
   animation: wiggle 1s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-rubberband"] + .emoji {
-  animation: rubberband 1s infinite;
+.emoji[title="effect-party"] + .emoji {
+  animation: party 4s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-flip"] + .emoji {
-  animation: flip 1s infinite;
+.emoji[title="effect-dabbin"] + .emoji {
+  animation: dabbin 10s infinite;
   animation-fill-mode: forwards;
-  backface-visibility: visible;
+}
+.emoji[title="effect-godtier"] + .emoji {
+  animation: godtier 2s infinite;
+  animation-fill-mode: forwards;
 }
 /*.message_content_header_left .message_current_status {
   position: absolute;
@@ -471,64 +480,61 @@ code {
     transform: rotateZ(0deg);
   }
 }
-
-@keyframes rubberband {
-  from {
-    transform: scale3d(1, 1, 1);
+@keyframes triggered {
+  0% {
+    transform: translate(0,0);
   }
-
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
+  20% {
+    transform: translate(2px,0);
   }
-
   40% {
-    transform: scale3d(0.75, 1.25, 1);
+    transform: translate(-2px,0);
   }
-
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
+  60% {
+    transform: translate(0,-2px);
   }
-
-  65% {
-    transform: scale3d(.95, 1.05, 1);
-  }
-
-  75% {
-    transform: scale3d(1.05, .95, 1);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-
-@keyframes flip {
-  from {
-    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
-    animation-timing-function: ease-out;
-  }
-
-  40% {
-    transform: perspective(400px) rotate3d(0, 1, 0, -190deg);
-    animation-timing-function: ease-out;
-  }
-
-  50% {
-    transform: perspective(400px) rotate3d(0, 1, 0, -170deg);
-    animation-timing-function: ease-in;
-  }
-
   80% {
-    transform: perspective(400px);
-    animation-timing-function: ease-in;
+    transform: translate(0,2px);
   }
-
-  to {
-    transform: perspective(400px);
-    animation-timing-function: ease-in;
+  100% {
+    transform: translate(0,0);
   }
 }
+@keyframes party {
+  0% {
+    filter: hue-rotate(0deg) saturate(3);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(3);
+  }
+}
+@keyframes dabbin {
+  0% {
+    filter: blur(0px);
+  }
+  25% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    filter: blur(20px);
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+@keyframes godtier {
+  0% {
+    filter: contrast(1.5) saturate(1) brightness(1) drop-shadow(0px 0px 0px rgb(249, 207, 153));
+  }
+  50% {
+    filter: contrast(2) saturate(1.25) brightness(1.5) drop-shadow(0px 0px 7px rgb(249, 207, 153));
+  }
+  100% {
+    filter: contrast(1.5) saturate(1) brightness(1) drop-shadow(0px 0px 0px rgb(249, 207, 153));
+  }
+}
+
 
 
 
