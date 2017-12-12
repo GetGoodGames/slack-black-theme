@@ -36,12 +36,6 @@ h1, h2, h3, h4 {
   display: inline-block;
 }
 
-
-
-
-
-
-
 /* sidebar */
 div.client_channels_list_container {
   background-color: var(--background-lighter) !important;
@@ -63,11 +57,6 @@ nav.p-channel_sidebar {
   color: var(--text-accent) !important;
   background: var(--accent-darker) !important;
 }
-
-
-
-
-
 
 /* general chat area background color */
 #msgs_scroller_div::-webkit-scrollbar-track, .client_container,
@@ -427,7 +416,7 @@ code {
   animation-fill-mode: forwards;
 }
 .emoji[title="effect-rubberband"] + .emoji {
-  animation: rubberband 1s infinite;
+  animation: rubberband 2s infinite;
   animation-fill-mode: forwards;
 }
 .emoji[title="effect-flip"] + .emoji {
