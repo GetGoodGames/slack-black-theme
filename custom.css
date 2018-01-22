@@ -69,13 +69,13 @@ ts-jumper input[type="text"],
 
 /* main chat text */
 ts-message, .channel_title .channel_name, ts-jumper input[type="text"],
-ts-jumper ol li .member_real_name, ts-jumper ol li .view_name, ts-jumper ol li .channel_name {
+ts-jumper ol li .member_real_name, ts-jumper ol li .view_name, ts-jumper ol li .channel_name, .c-message__body {
   color: var(--text-main) !important;
 }
 
 /* names */
 .light_theme ts-message .message_content a.message_sender, #msg_input::-webkit-input-placeholder,
-ts-jumper input[type="text"]::-webkit-input-placeholder {
+ts-jumper input[type="text"]::-webkit-input-placeholder, .c-message__sender a, .c-message_attachment, .c-message_list__day_divider__label {
   color: var(--text-accent) !important;
 }
 
@@ -109,6 +109,10 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 .notification_example.mac {
   color: #555459; /* default color - leave unthemed */
 }
+/* message hover */
+.c-message:hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message--hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message--focus:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight) {
+    background: var(--background-bright);
+}
 
 
 
@@ -119,8 +123,19 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
   background: var(--background-lighter) !important;
 }
 
+/* day splitter */
+.c-message_list__day_divider__label__pill {
+    background: var(--background-lighter);
+}
+.c-message_list__day_divider__line {
+    border-color: var(--background-lighter);
+}
 
-
+/* scroll bar */
+.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before, .p-message_pane .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before {
+    border-color: var(--background-accent);
+    background: var(--background);
+}
 
 
 
