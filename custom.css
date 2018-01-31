@@ -409,7 +409,7 @@ code {
 
 
 /* emoji */
-.message_body span.emoji {
+.c-message__body span.emoji {
   width: 2em;
   height: 2em;
   position: relative;
@@ -419,41 +419,41 @@ code {
   /*-webkit-mask-composite: xor;*/
 }
 
-.emoji[title ^="effect"] {
+.emoji[style *="effect"] {
   display: none;
 }
-.emoji[title="effect-pulse"] + .emoji {
+.emoji[style*="effect-pulse"] + .emoji {
   transform: scale(1,1);
   animation: pulse 1s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-wiggle"] + .emoji {
+.emoji[style*="effect-wiggle"] + .emoji {
   animation: wiggle 1s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-rubberband"] + .emoji {
+.emoji[style*="effect-rubberband"] + .emoji {
   animation: rubberband 2s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-flip"] + .emoji {
+.emoji[style*="effect-flip"] + .emoji {
   animation: flip 1s infinite;
   animation-fill-mode: forwards;
   backface-visibility: visible;
 }
-.emoji[title="effect-triggered"] + .emoji {
+.emoji[style*="effect-triggered"] + .emoji {
   transform: translate(0,0);
   animation: triggered .1s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-party"] + .emoji {
+.emoji[style*="effect-party"] + .emoji {
   animation: party 4s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-dabbin"] + .emoji {
+.emoji[style*="effect-dabbin"] + .emoji {
   animation: dabbin 10s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[title="effect-godtier"] + .emoji {
+.emoji[style*="effect-godtier"] + .emoji {
   animation: godtier 2s infinite;
   animation-fill-mode: forwards;
 }
