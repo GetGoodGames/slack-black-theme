@@ -373,7 +373,7 @@ code {
 }
 
 /* main chat scrollbar */
-#messages_container:after {
+.c-virtual_list__scroll_container {
   background: var(--background) !important;
 }
 #messages_container:before {
