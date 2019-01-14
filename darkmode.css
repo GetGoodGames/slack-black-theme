@@ -83,7 +83,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder, .c-message__sender a, .
   background: var(--background);
 }
 #convo_tab #convo_tab_header {
-  background: var(--text-header);
+  color: var(--text-header);
 }
 #flex_contents .heading {
   background: var(--background);
