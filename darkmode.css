@@ -79,7 +79,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder, .c-message__sender a, .
 }
 
 /* panel */
-#flex_contents .flex_scroller_container, #flex_contents .monkey_scroll_wrapper, #flex_contents .monkey_scroll_wrapper>.monkey_scroll_hider, #flex_contents .panel.active {
+#flex_contents .panel.active {
   background: var(--background);
 }
 #convo_tab #convo_tab_header {
