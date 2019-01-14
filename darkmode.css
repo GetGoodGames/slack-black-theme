@@ -85,7 +85,9 @@ ts-jumper input[type="text"]::-webkit-input-placeholder, .c-message__sender a, .
 #convo_tab #convo_tab_header {
   background: var(--text-header);
 }
-
+#flex_contents .heading {
+  background: var(--background);
+}
 
 /* fix annoying white flash when changing channels */
 #client_body:before {
