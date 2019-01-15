@@ -501,13 +501,13 @@ code {
   animation: godtier 2s infinite;
   animation-fill-mode: forwards;
 }
-.emoji[style*="effect-slideX"] + .emoji {
+.emoji[style*="effect-slide-x"] + .emoji {
   background-repeat-x: repeat;
   animation: slideX 1s infinite;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.emoji[style*="effect-slideY"] + .emoji {
+.emoji[style*="effect-slide-y"] + .emoji {
   background-repeat-y: repeat;
   animation: slideY 1s infinite;
   animation-timing-function: linear;
