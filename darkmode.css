@@ -535,6 +535,18 @@ a, a:link, a:visited, .p-threads_flexpane__header_channel_name {
   animation-fill-mode: forwards;
 }
 
+.emoji[style *="overlay"] {
+  position: absolute;
+  z-index: 1;
+  transform: scale(1.2, 1.2)
+}
+
+.emoji[style *="overlay"] + .emoji{
+  position: absolute;
+  left: 2.25em;
+  z-index: 0;
+  transform: scale(.85, .85)
+}
 /*.message_content_header_left .message_current_status {
   position: absolute;
   left: 39px;
