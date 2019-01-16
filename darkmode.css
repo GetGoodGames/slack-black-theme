@@ -820,3 +820,15 @@ a, a:link, a:visited, .p-threads_flexpane__header_channel_name {
   background: var(--background);
   border-color: var(--accent-darker);
 }
+
+/* C-k menu */
+.p-jumper__help {
+  background: var(--background) !important;
+  color: var(--text-main) !important;
+}
+.c-team__display-name, .c-unified_member__display-name, .c-usergroup__handle {
+  color: var(--text-main) !important;
+}
+ts-jumper .p-jumper__results {
+  border-color: var(--background-bright) !important;
+}
