@@ -392,6 +392,7 @@ code {
 /* main chat scrollbar */
 .c-virtual_list__scroll_container {
   background: var(--background) !important;
+  color: var(--text-main);
 }
 #messages_container:before {
   display:none;
@@ -417,8 +418,31 @@ code {
   background: var(--background-bright) !important;
 }
 
+.c-message_actions__container {
+  background: var(--background-lighter);
+  border: 1px solid var(--accent-darker);
+}
+.c-message_actions__container:hover {
+  border: 1px solid var(--accent);
+}
+.c-message_actions__button {
+  border-right: 1px solid var(--accent-darker);
+}
+.c-message_actions__button:hover {
+  color: var(--accent-darker);
+}
+.p-message_pane__unread_banner {
+  background: var(--accent);
+  color: var(--text-accent);
+}
 
-
+/* from: https://github.com/widget-/slack-black-theme/issues/48#issuecomment-426578986 */
+.p-message_pane .p-message_pane__top_banners:not(:empty)+div .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider:before,.p-message_pane .p-message_pane__top_banners:not(:empty)+div .c-message_list:not(.c-virtual_list--scrollbar):before{
+  box-shadow:0 32px var(--background);
+}
+.p-message_pane .c-message_list.c-virtual_list--scrollbar>.c-scrollbar__hider,.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar){
+  background: var(--background);
+}
 
 /* markdown */
 .c-message_attachment__border {
@@ -445,12 +469,9 @@ code {
   color: var(--text-main) !important;
 }
 
-
-
-
-
-
-
+a, a:link, a:visited, .p-threads_flexpane__header_channel_name {
+  color: var(--accent);
+}
 
 /* emoji */
 .c-message__body span.emoji {
@@ -715,6 +736,7 @@ code {
 .heading, .p-flexpane_header {
   background: var(--background-darker) !important;
   border: none !important;
+  color: var(--text-header);
 }
 
 #threads_msgs, #threads_msgs_scroller_div, .message_container_item {
