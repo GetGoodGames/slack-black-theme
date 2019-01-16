@@ -425,7 +425,7 @@ code {
   background-color: var(--background-bright) !important;
 }
 
-.c-mrkdwn__quote { 
+.c-mrkdwn__quote {
   background-color: var(--background-secondary) !important;
 }
 .c-mrkdwn__quote:before {
@@ -712,7 +712,7 @@ code {
 .tab_panels, .tab_container, .panel, .active {
   border: none !important;
 }
-.heading {
+.heading, .p-flexpane_header {
   background: var(--background-darker) !important;
   border: none !important;
 }
@@ -720,6 +720,10 @@ code {
 #threads_msgs, #threads_msgs_scroller_div, .message_container_item {
   background: var(--background-dark) !important;
 }
+.p-threads_footer__input .p-message_input_field, .p-threads_footer__input--legacy .p-message_input_plus {
+  background: var(--background);
+}
+
 
 .day_container {
   margin-bottom: -4em !important;
