@@ -814,3 +814,9 @@ a, a:link, a:visited, .p-threads_flexpane__header_channel_name {
   width: 3em;
   height: 3em;
 } */
+
+/* reactions */
+.c-reaction, .c-reaction_add {
+  background: var(--background);
+  border-color: var(--accent-darker);
+}
