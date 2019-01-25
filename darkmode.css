@@ -797,12 +797,19 @@ a, a:link, a:visited, .p-threads_flexpane__header_channel_name {
   /* width: 3em !important; */
 }
 
-.upload_in_threads .message_input {
-  margin-left: 3em !important;
+#convo_container ts-conversation ts-relatives:not(.empty) {
+  margin-top: 40px;
+}
+
+#reply_container {
+    margin-top: 70px;
+}
+
+#reply_container .reply_container_info .reply_broadcast_buttons_container .reply_broadcast_label_container {
+    color: var(--text-accent);
 }
 
 .upload_in_threads .inline_message_input_container{
-  border: none !important;
   background: none !important;
 }
 
